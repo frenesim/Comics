@@ -20,9 +20,13 @@ class MarvelApi
     @results = @data["results"]
   end
 
+  def query=(query)
+    @query = "&#{query}"
+  end
+
   private
     def uri
-      URI::HTTPS.build(host: HOST, path: @endpoint, query: @authentication_query_string)
+      URI::HTTPS.build(host: HOST, path: @endpoint, query: @authentication_query_string + @query.to_s)
     end
 
 
