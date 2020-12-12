@@ -1,0 +1,21 @@
+<div class="flex-column" style="background-color: red; align-items: center; ;justify-content: center;">
+  <%= image_tag 'marvel_logo.png', alt: 'Marvel show room' %>
+
+  <div style= "padding: 50px">
+    <%= text_field_tag 'search', nil, placeholder: 'Find by character' %>
+  </div>
+</div>
+
+<div class="flex-row flex-wrap">
+  <%-@comics.each do |comic| %>
+    <%-if comic.cover_url.present? %>
+      <div class=cover_wrapper>
+        <% cache comic do %>
+          <%=image_tag comic.cover_url, size: "300x400", alt: comic.id %>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+
