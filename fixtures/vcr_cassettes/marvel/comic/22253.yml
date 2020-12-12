@@ -1,0 +1,38 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://gateway.marvel.com/v1/public/comics/22253?apikey=07e3e205bebd46de31d15ee9a76d85c2&hash=92c26f3f2c82cd12ce27f137e0e7ee31&ts=1607731322
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - gateway.marvel.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Etag:
+      - 1d7f74becbcdd94e24f78e9fcfb7e1b9af5392e6
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 12 Dec 2020 18:03:50 GMT
+      Connection:
+      - keep-alive
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJjb2RlIjoyMDAsInN0YXR1cyI6Ik9rIiwiY29weXJpZ2h0IjoiwqkgMjAyMCBNQVJWRUwiLCJhdHRyaWJ1dGlvblRleHQiOiJEYXRhIHByb3ZpZGVkIGJ5IE1hcnZlbC4gwqkgMjAyMCBNQVJWRUwiLCJhdHRyaWJ1dGlvbkhUTUwiOiI8YSBocmVmPVwiaHR0cDovL21hcnZlbC5jb21cIj5EYXRhIHByb3ZpZGVkIGJ5IE1hcnZlbC4gwqkgMjAyMCBNQVJWRUw8L2E+IiwiZXRhZyI6IjFkN2Y3NGJlY2JjZGQ5NGUyNGY3OGU5ZmNmYjdlMWI5YWY1MzkyZTYiLCJkYXRhIjp7Im9mZnNldCI6MCwibGltaXQiOjIwLCJ0b3RhbCI6MSwiY291bnQiOjEsInJlc3VsdHMiOlt7ImlkIjoyMjI1MywiZGlnaXRhbElkIjowLCJ0aXRsZSI6Ikh1bGsgQ3VzdG9tIENvbWljICgyMDA4KSAjMSIsImlzc3VlTnVtYmVyIjoxLCJ2YXJpYW50RGVzY3JpcHRpb24iOiIiLCJkZXNjcmlwdGlvbiI6bnVsbCwibW9kaWZpZWQiOiItMDAwMS0xMS0zMFQwMDowMDowMC0wNTAwIiwiaXNibiI6IiIsInVwYyI6IiIsImRpYW1vbmRDb2RlIjoiIiwiZWFuIjoiIiwiaXNzbiI6IiIsImZvcm1hdCI6IkNvbWljIiwicGFnZUNvdW50IjowLCJ0ZXh0T2JqZWN0cyI6W10sInJlc291cmNlVVJJIjoiaHR0cDovL2dhdGV3YXkubWFydmVsLmNvbS92MS9wdWJsaWMvY29taWNzLzIyMjUzIiwidXJscyI6W3sidHlwZSI6ImRldGFpbCIsInVybCI6Imh0dHA6Ly9tYXJ2ZWwuY29tL2NvbWljcy9pc3N1ZS8yMjI1My9odWxrX2N1c3RvbV9jb21pY18yMDA4XzE/dXRtX2NhbXBhaWduPWFwaVJlZiZ1dG1fc291cmNlPTA3ZTNlMjA1YmViZDQ2ZGUzMWQxNWVlOWE3NmQ4NWMyIn1dLCJzZXJpZXMiOnsicmVzb3VyY2VVUkkiOiJodHRwOi8vZ2F0ZXdheS5tYXJ2ZWwuY29tL3YxL3B1YmxpYy9zZXJpZXMvNTg2NSIsIm5hbWUiOiJIdWxrIEN1c3RvbSBDb21pYyAoMjAwOCkifSwidmFyaWFudHMiOltdLCJjb2xsZWN0aW9ucyI6W10sImNvbGxlY3RlZElzc3VlcyI6W10sImRhdGVzIjpbeyJ0eXBlIjoib25zYWxlRGF0ZSIsImRhdGUiOiIyMDI5LTEyLTMxVDAwOjAwOjAwLTA1MDAifSx7InR5cGUiOiJmb2NEYXRlIiwiZGF0ZSI6Ii0wMDAxLTExLTMwVDAwOjAwOjAwLTA1MDAifV0sInByaWNlcyI6W3sidHlwZSI6InByaW50UHJpY2UiLCJwcmljZSI6MH1dLCJ0aHVtYm5haWwiOnsicGF0aCI6Imh0dHA6Ly9pLmFubmloaWwudXMvdS9wcm9kL21hcnZlbC9pL21nL2IvNDAvaW1hZ2Vfbm90X2F2YWlsYWJsZSIsImV4dGVuc2lvbiI6ImpwZyJ9LCJpbWFnZXMiOltdLCJjcmVhdG9ycyI6eyJhdmFpbGFibGUiOjAsImNvbGxlY3Rpb25VUkkiOiJodHRwOi8vZ2F0ZXdheS5tYXJ2ZWwuY29tL3YxL3B1YmxpYy9jb21pY3MvMjIyNTMvY3JlYXRvcnMiLCJpdGVtcyI6W10sInJldHVybmVkIjowfSwiY2hhcmFjdGVycyI6eyJhdmFpbGFibGUiOjEsImNvbGxlY3Rpb25VUkkiOiJodHRwOi8vZ2F0ZXdheS5tYXJ2ZWwuY29tL3YxL3B1YmxpYy9jb21pY3MvMjIyNTMvY2hhcmFjdGVycyIsIml0ZW1zIjpbeyJyZXNvdXJjZVVSSSI6Imh0dHA6Ly9nYXRld2F5Lm1hcnZlbC5jb20vdjEvcHVibGljL2NoYXJhY3RlcnMvMTAwOTM1MSIsIm5hbWUiOiJIdWxrIn1dLCJyZXR1cm5lZCI6MX0sInN0b3JpZXMiOnsiYXZhaWxhYmxlIjoyLCJjb2xsZWN0aW9uVVJJIjoiaHR0cDovL2dhdGV3YXkubWFydmVsLmNvbS92MS9wdWJsaWMvY29taWNzLzIyMjUzL3N0b3JpZXMiLCJpdGVtcyI6W3sicmVzb3VyY2VVUkkiOiJodHRwOi8vZ2F0ZXdheS5tYXJ2ZWwuY29tL3YxL3B1YmxpYy9zdG9yaWVzLzUwNTY4IiwibmFtZSI6IkNvdmVyICM1MDU2OCIsInR5cGUiOiJjb3ZlciJ9LHsicmVzb3VyY2VVUkkiOiJodHRwOi8vZ2F0ZXdheS5tYXJ2ZWwuY29tL3YxL3B1YmxpYy9zdG9yaWVzLzUwNTY5IiwibmFtZSI6IkludGVyaW9yICM1MDU2OSIsInR5cGUiOiJpbnRlcmlvclN0b3J5In1dLCJyZXR1cm5lZCI6Mn0sImV2ZW50cyI6eyJhdmFpbGFibGUiOjAsImNvbGxlY3Rpb25VUkkiOiJodHRwOi8vZ2F0ZXdheS5tYXJ2ZWwuY29tL3YxL3B1YmxpYy9jb21pY3MvMjIyNTMvZXZlbnRzIiwiaXRlbXMiOltdLCJyZXR1cm5lZCI6MH19XX19
+  recorded_at: Sat, 12 Dec 2020 00:02:02 GMT
+recorded_with: VCR 6.0.0
