@@ -1,0 +1,36 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://gateway.marvel.com/v1/public/comics?apikey=07e3e205bebd46de31d15ee9a76d85c2&characters=deadpool,spiderman&format=comic&formatType=comic&hash=92c26f3f2c82cd12ce27f137e0e7ee31&limit=98&noVariants=true&offset=150&ts=1607731322
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - gateway.marvel.com
+  response:
+    status:
+      code: 409
+      message: Conflict
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 12 Dec 2020 13:11:32 GMT
+      Connection:
+      - keep-alive
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"code":409,"status":"You must pass at least one valid character if
+        you set the character filter."}'
+  recorded_at: Sat, 12 Dec 2020 00:02:02 GMT
+recorded_with: VCR 6.0.0

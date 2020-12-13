@@ -1,0 +1,38 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://gateway.marvel.com/v1/public/characters?apikey=07e3e205bebd46de31d15ee9a76d85c2&hash=92c26f3f2c82cd12ce27f137e0e7ee31&name=frenesim&ts=1607731322
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - gateway.marvel.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Etag:
+      - 79ef3436d0dc139b17693635b99776556e29f495
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 12 Dec 2020 13:51:53 GMT
+      Connection:
+      - keep-alive
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJjb2RlIjoyMDAsInN0YXR1cyI6Ik9rIiwiY29weXJpZ2h0IjoiwqkgMjAyMCBNQVJWRUwiLCJhdHRyaWJ1dGlvblRleHQiOiJEYXRhIHByb3ZpZGVkIGJ5IE1hcnZlbC4gwqkgMjAyMCBNQVJWRUwiLCJhdHRyaWJ1dGlvbkhUTUwiOiI8YSBocmVmPVwiaHR0cDovL21hcnZlbC5jb21cIj5EYXRhIHByb3ZpZGVkIGJ5IE1hcnZlbC4gwqkgMjAyMCBNQVJWRUw8L2E+IiwiZXRhZyI6Ijc5ZWYzNDM2ZDBkYzEzOWIxNzY5MzYzNWI5OTc3NjU1NmUyOWY0OTUiLCJkYXRhIjp7Im9mZnNldCI6MCwibGltaXQiOjIwLCJ0b3RhbCI6MCwiY291bnQiOjAsInJlc3VsdHMiOltdfX0=
+  recorded_at: Sat, 12 Dec 2020 00:02:02 GMT
+recorded_with: VCR 6.0.0
