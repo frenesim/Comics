@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'favorites/toggle'
   root to: 'comic_collections#index'
 
   resources :comic_collections, only: :index
