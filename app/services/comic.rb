@@ -16,4 +16,8 @@ class Comic < MarvelApi
     end
   end
 
+  def favorite(current_session)
+    Favorite.find_by(comic_id: id, user_session: current_session)
+  end
+
 end
