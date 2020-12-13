@@ -17,7 +17,7 @@ RSpec.describe ComicCollection do
 
     describe 'fetch' do
       it 'returns fetch fetched comics' do
-        VCR.use_cassette 'marvel/comics_with_params' do
+        VCR.use_cassette 'marvel/comic_collection' do
           expect(@comic.fetch.count).to eq 98
         end
       end
@@ -25,15 +25,15 @@ RSpec.describe ComicCollection do
 
     describe 'ids' do
       it 'returns collection ids' do
-        VCR.use_cassette 'marvel/comics_with_params' do
-          expect(@comic.ids).to include 76360, 84381, 90548, 82248, 77943, 88751, 84260, 80615, 88753, 78713, 80491, 77133
+        VCR.use_cassette 'marvel/comic_collection' do
+          expect(@comic.ids).to include 85938, 82506, 93424, 82246, 77110, 78725, 80120, 77996, 85507, 81078, 77347, 79947, 85304, 78360
         end
       end
     end
 
     describe 'comics' do
       it 'returns an array of comic instance ready to be fetch from source' do
-        VCR.use_cassette 'marvel/comics_with_params' do
+        VCR.use_cassette 'marvel/comic_collection_with_commics' do
           expect(@comic.comics.count).to eq 98
           expect(@comic.comics.sample).to be_a Comic
         end
@@ -42,7 +42,7 @@ RSpec.describe ComicCollection do
 
     describe 'total' do
       it 'returns the total number of comics in the request' do
-        expect(@comic.total).to eq 32997
+        expect(@comic.total).to eq 27489
       end
     end
   end
