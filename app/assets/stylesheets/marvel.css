@@ -62,8 +62,9 @@ button.navigation-button {
 }
 button.navigation-button:hover {
   box-shadow: 0 0 10px 0 black inset, 0 0 10px 4px black;
+}
 
-.cover_wrapper{
+.cover-wrapper{
   padding: 20px;
   background-color: black
 }

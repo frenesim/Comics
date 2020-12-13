@@ -4,4 +4,6 @@ Rails.application.routes.draw do
 
   resources :comic_collections, only: :index
 
+  get 'search_character', to: 'characters#search'
+
 end

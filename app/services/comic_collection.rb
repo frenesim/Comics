@@ -1,6 +1,6 @@
 class ComicCollection < MarvelApi
 
-  attr_accessor :limit, :offset
+  attr_accessor :limit, :offset, :characters
 
   def initialize
     super("comics")
@@ -12,6 +12,7 @@ class ComicCollection < MarvelApi
     query_string = "format=comic&formatType=comic&noVariants=true&orderBy=-onsaleDate&"
     query_string << "limit=#{@limit}&"
     query_string << "offset=#{@offset}&"
+    query_string << "characters=#{@characters}&" if @characters
     self.query = query_string.chop!
     request unless @fetch.present?
     @fetch ||= results
