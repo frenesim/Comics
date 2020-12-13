@@ -12,9 +12,7 @@
   <%-@comics.each do |comic| %>
     <%-if comic.cover_url.present? %>
       <div class="cover-wrapper" data-controller="comics" data-comics-url-value=<%=favorites_toggle_path(comic_id: comic.id) %>>
-        <% cache comic do %>
-          <%=render "comic_cover", comic: comic%>
-        <% end %>
+        <%=render "comic_cover", comic: comic%>
       </div>
     <% end %>
   <% end %>
