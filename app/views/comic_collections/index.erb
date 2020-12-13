@@ -1,12 +1,11 @@
 <div class="flex-column" style="background-color: red; align-items: center; ;justify-content: center;">
-  <%= image_tag 'marvel_logo.png', alt: 'Marvel show room' %>
-
+  <%=link_to image_tag('marvel_logo.png', alt: 'Marvel show room'), root_path %>
   <div style= "padding: 50px">
     <%= text_field_tag 'search', nil, placeholder: 'Find by character' %>
   </div>
 </div>
 
-<div class="flex-row flex-wrap">
+<div class="flex-row">
   <%-@comics.each do |comic| %>
     <%-if comic.cover_url.present? %>
       <div class=cover_wrapper>
@@ -16,6 +15,16 @@
       </div>
     <% end %>
   <% end %>
+</div>
+
+<div class="flex-row navigation-buttons">
+    <button class= "btn navigation-button">
+      <%=link_to 'PREVIOUS', comic_collections_path(offset: @previous_offset)%>
+    </button>
+    <button class="btn navigation-button">
+      <%=link_to 'NEXT', comic_collections_path(offset: @next_offset)%>
+    </button>
+
 </div>
 
 

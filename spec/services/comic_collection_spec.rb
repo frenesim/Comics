@@ -15,10 +15,10 @@ RSpec.describe ComicCollection do
         @comic.offset = 150
     end
 
-    describe 'all' do
-      it 'returns all fetched comics' do
+    describe 'fetch' do
+      it 'returns fetch fetched comics' do
         VCR.use_cassette 'marvel/comics_with_params' do
-          expect(@comic.all.count).to eq 98
+          expect(@comic.fetch.count).to eq 98
         end
       end
     end
@@ -37,6 +37,12 @@ RSpec.describe ComicCollection do
           expect(@comic.comics.count).to eq 98
           expect(@comic.comics.sample).to be_a Comic
         end
+      end
+    end
+
+    describe 'total' do
+      it 'returns the total number of comics in the request' do
+        expect(@comic.total).to eq 32997
       end
     end
   end

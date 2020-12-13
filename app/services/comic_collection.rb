@@ -4,24 +4,31 @@ class ComicCollection < MarvelApi
 
   def initialize
     super("comics")
+    @limit = 20
+    @offset = 0
   end
 
-  def all
+  def fetch
     query_string = "format=comic&formatType=comic&noVariants=true&orderBy=-onsaleDate&"
-    query_string << "limit=#{limit}&" if limit
-    query_string << "offset=#{offset}&" if offset
+    query_string << "limit=#{@limit}&"
+    query_string << "offset=#{@offset}&"
     self.query = query_string.chop!
-    request unless @all.present?
-    @all ||= results
+    request unless @fetch.present?
+    @fetch ||= results
   end
 
   def ids
-    all.map{|a| a["id"]}
+    fetch.map{|a| a["id"]}
   end
 
   def comics
     ids.map do |id|
       Comic.new(id)
     end
+  end
+
+  def total
+    fetch
+    data["total"]
   end
 end
