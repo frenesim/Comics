@@ -42,7 +42,9 @@ RSpec.describe ComicCollection do
 
     describe 'total' do
       it 'returns the total number of comics in the request' do
-        expect(@comic.total).to eq 27489
+        VCR.use_cassette 'marvel/comic_collection' do
+          expect(@comic.total).to eq 27489
+        end
       end
     end
   end
