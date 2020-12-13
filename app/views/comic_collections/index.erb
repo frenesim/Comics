@@ -1,38 +1,29 @@
-<div data-controller="comics">
-  <div class="flex-column" style="background-color: red; align-items: center; justify-content: center;">
-    <%=link_to image_tag('marvel_logo.png', alt: 'Marvel show room'), root_path %>
-    <div style= "padding: 50px">
-      <%=form_with url: search_character_path, method: :get do |f| %>
-        <%= f.text_field 'character_name', placeholder: 'Find by character' %>
-        <%= f.submit "Search" %>
-      <% end %>
-    </div>
-  </div>
-
-  <div class="flex-row">
-    <%-@comics.each do |comic| %>
-      <%-if comic.cover_url.present? %>
-        <div class="cover-wrapper">
-          <% cache comic do %>
-            <%=image_tag comic.cover_url, size: "300x400", alt: comic.id, class: 'cover' %>
-            <%=image_tag "heart_hover", alt: 'heart_hover', class: "heart" %>
-            <%=image_tag "heart_off", alt: 'heart_off', class: "heart-off" %>
-            <% if @favorite then %>
-              <%=image_tag "heart_on", alt: 'heart_off', class: "heart-on" %>
-            <% end %>
-          <% end %>
-        </div>
-      <% end %>
+<div class="flex-column" style="background-color: red; align-items: center; justify-content: center;">
+  <%=link_to image_tag('marvel_logo.png', alt: 'Marvel show room'), root_path %>
+  <div style= "padding: 50px">
+    <%=form_with url: search_character_path, method: :get do |f| %>
+      <%= f.text_field 'character_name', placeholder: 'Find by character' %>
+      <%= f.submit "Search" %>
     <% end %>
-  </div>
-
-  <div class="flex-row navigation-buttons">
-    <button class= "btn navigation-button">
-      <%=link_to 'PREVIOUS', comic_collections_path(offset: @previous_offset)%>
-    </button>
-    <button class="btn navigation-button">
-      <%=link_to 'NEXT', comic_collections_path(offset: @next_offset)%>
-    </button>
   </div>
 </div>
 
+<div class="flex-row">
+  <%-@comics.each do |comic| %>
+    <%-if comic.cover_url.present? %>
+      <div class="cover-wrapper" data-controller="comics" data-comics-url-value=<%=favorites_toggle_path(comic_id: comic.id) %>>
+        <% cache comic do %>
+          <%=render "comic_cover", comic: comic%>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+<div class="flex-row navigation-buttons">
+  <button class= "btn navigation-button">
+    <%=link_to 'PREVIOUS', comic_collections_path(offset: @previous_offset)%>
+  </button>
+  <button class="btn navigation-button">
+    <%=link_to 'NEXT', comic_collections_path(offset: @next_offset)%>
+  </button>
+</div>
