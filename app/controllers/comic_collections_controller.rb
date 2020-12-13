@@ -2,7 +2,7 @@ class ComicCollectionsController < ApplicationController
 
   def index
     comic_colection = ComicCollection.new
-    comic_colection.limit = 5
+    comic_colection.limit = 25
     comic_colection.offset = params["offset"] if params["offset"]
     comic_colection.characters = params["characters"] if params["characters"]
     @previous_offset = [0, comic_colection.offset.to_i - comic_colection.limit.to_i].max

@@ -66,19 +66,30 @@ button.navigation-button:hover {
 
 .cover-wrapper{
   padding: 20px;
-  background-color: black
+  background-color: black;
+  display: flex;
 }
 
 .heart {
   transition: .5s ease;
   opacity: 0;
-  transform: translate(-120%, -50%);
+  transform: translate(270px, -10px);
+  position: absolute;
+  overflow: visible;
 }
 .heart-off {
-  transform: translate(-240%, -50%);
+  transition: .5s ease;
+  transform: translate(270px, -10px);
+  position: absolute;
+  overflow: visible;
 }
 .heart-on {
-  transform: translate(-280%, -25%);
+  transition: .5s ease;
+  transform: translate(265px, -16px);
+  position: absolute;
+  overflow: visible;
+  width: 41px;
+  height: 38px;
 }
 
 .cover-wrapper:hover .cover {
