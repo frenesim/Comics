@@ -9,7 +9,7 @@ class ComicCollection < MarvelApi
   end
 
   def fetch
-    query_string = "format=comic&formatType=comic&noVariants=true&orderBy=-onsaleDate&"
+    query_string = "format=comic&formatType=comic&noVariants=true&orderBy=-onsaleDate&hasDigitalIssue=true&"
     query_string << "limit=#{@limit}&"
     query_string << "offset=#{@offset}&"
     query_string << "characters=#{@characters}&" if @characters
