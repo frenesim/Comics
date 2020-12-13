@@ -68,3 +68,23 @@ button.navigation-button:hover {
   padding: 20px;
   background-color: black
 }
+
+.heart {
+  transition: .5s ease;
+  opacity: 0;
+  transform: translate(-120%, -50%);
+}
+.heart-off {
+  transform: translate(-240%, -50%);
+}
+.heart-on {
+  transform: translate(-280%, -25%);
+}
+
+.cover-wrapper:hover .cover {
+  opacity: 0.3;
+}
+
+.cover-wrapper:hover .heart {
+  opacity: 1;
+}
