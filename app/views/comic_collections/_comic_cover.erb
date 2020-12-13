@@ -1,7 +1,7 @@
 <%=image_tag comic.cover_url, size: "300x400", alt: comic.id, class: 'cover', data: {action: "click->comics#toggleFavorite"} %>
 
-<%=image_tag "heart_hover", alt: 'heart_hover', class: "heart" %>
-<%=image_tag "heart_off", alt: 'heart_off', class: "heart-off" %>
+<%=image_tag "heart_hover.png", alt: 'heart_hover', class: "heart" %>
+<%=image_tag "heart_off.png", alt: 'heart_off', class: "heart-off" %>
 <% if comic.favorite(cookies[:current_user]) then %>
-  <%=image_tag "heart_on", alt: 'heart_on', class: "heart-on" %>
+  <%=image_tag "heart_on.png", alt: 'heart_on', class: "heart-on" %>
 <% end %>
