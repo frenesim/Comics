@@ -18,10 +18,14 @@
   <% end %>
 </div>
 <div class="flex-row navigation-buttons">
-  <button class= "btn navigation-button">
-    <%=link_to 'PREVIOUS', comic_collections_path(offset: @previous_offset)%>
-  </button>
-  <button class="btn navigation-button">
-    <%=link_to 'NEXT', comic_collections_path(offset: @next_offset)%>
-  </button>
+    <%=link_to comic_collections_path(offset: @previous_offset) do%>
+      <button class= "btn navigation-button">
+        PREVIOUS
+      </button>
+    <% end %>
+    <%=link_to comic_collections_path(offset: @next_offset) do%>
+      <button class="btn navigation-button">
+        NEXT
+      </button>
+    <% end %>
 </div>
