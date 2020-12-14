@@ -2,10 +2,10 @@ class ComicCollection < MarvelApi
 
   attr_accessor :limit, :offset, :characters
 
-  def initialize
+  # Marvel API accepts list of characters ids seperated by comma
+  def initialize(limit: 25, offset: 0, characters: nil)
     super("comics")
-    @limit = 20
-    @offset = 0
+    @limit, @offset, @characters = limit, offset, characters
   end
 
   def fetch

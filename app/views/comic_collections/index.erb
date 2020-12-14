@@ -2,7 +2,7 @@
   <%=link_to image_tag('marvel_logo.png', alt: 'Marvel show room'), root_path %>
   <div style= "padding: 50px">
     <%=form_with url: search_character_path, method: :get do |f| %>
-      <%= f.text_field 'character_name', placeholder: 'Find by character' %>
+      <%= f.text_field 'character_name', placeholder: 'Find by character', value: @character_name %>
       <%= f.submit "Search" %>
     <% end %>
   </div>
@@ -18,12 +18,12 @@
   <% end %>
 </div>
 <div class="flex-row navigation-buttons">
-    <%=link_to comic_collections_path(offset: @previous_offset) do%>
+    <%=link_to comic_collections_path(offset: @previous_offset, character: @character, character_name: @character_name) do%>
       <button class= "btn navigation-button">
         PREVIOUS
       </button>
     <% end %>
-    <%=link_to comic_collections_path(offset: @next_offset) do%>
+    <%=link_to comic_collections_path(offset: @next_offset, character: @character, character_name: @character_name) do%>
       <button class="btn navigation-button">
         NEXT
       </button>
